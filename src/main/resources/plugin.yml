@@ -1,0 +1,4 @@
+name: Greeter
+version: '${version}'
+main: me.streetmelodeez.greeter.Greeter
+api-version: '1.20'
