@@ -1,17 +1,13 @@
 package me.streetmelodeez.greeter;
 
 import me.clip.placeholderapi.PlaceholderAPI;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.event.Event;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
-import org.bukkit.event.player.PlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
-
-import javax.swing.text.html.parser.Parser;
 
 public class PlayerListeners implements Listener {
     Greeter plugin;
@@ -36,9 +32,14 @@ public class PlayerListeners implements Listener {
         String selam = event.getMessage();
         String pw2 = PlaceholderAPI.setPlaceholders(event.getPlayer(), "%player_name%");
         if (selam.startsWith("selam") || selam.startsWith("Selam") || selam.startsWith("SELAM")){
-            event.getPlayer().sendMessage(tag + ChatColor.LIGHT_PURPLE +"Aleykümselam hoş geldin" + pw2);
+            Bukkit.getScheduler().runTaskLater(plugin, () -> {
+                event.getPlayer().sendMessage(tag + ChatColor.LIGHT_PURPLE +"Aleykümselam hoş geldin " + pw2);
+            }, 1L);
+
         }else if (selam.equals("sa") || selam.equals("SA") || selam.equals("Sa")){
-            event.getPlayer().sendMessage(tag + ChatColor.LIGHT_PURPLE +"Aleykümselam" + pw2);
+            Bukkit.getScheduler().runTaskLater(plugin, () -> {
+            event.getPlayer().sendMessage(tag + ChatColor.LIGHT_PURPLE +"Aleykümselam " + pw2);
+        }, 1L);
         }
 
     }
