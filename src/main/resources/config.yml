@@ -1,0 +1,4 @@
+welcomeMessage: "%luckperms_prefix% §b%player_name% §aAramıza katıldı!"
+byeMessage: "%luckperms_prefix% §b%player_name% §4Aramızdan ayrıldı!"
+selamAlmaMesaj: "§aAleykümselam §b%player_name%!"
+pluginTag: "§3[Greeter]"

@@ -4,4 +4,8 @@ main: me.streetmelodeez.greeter.Greeter
 api-version: '1.20'
 author: StreetMelodeez
 description: A simple plugin that greets players when they join.
+commands:
+  greeter:
+    description: "greeter komutu"
+    tab-completer: me.streetmelodeez.greeter.TabComplete
 
