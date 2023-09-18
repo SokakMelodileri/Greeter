@@ -11,7 +11,9 @@ import org.bukkit.event.player.PlayerQuitEvent;
 public class PlayerListeners implements Listener {
     Greeter plugin;
 
-    public PlayerListeners (Greeter plugin){this.plugin = plugin;}
+    public PlayerListeners (Greeter plugin){
+        this.plugin = plugin;
+        plugin.getServer().getPluginManager().registerEvents(new PlayerListeners(plugin), plugin);}
 
     @EventHandler
     public void wm (PlayerJoinEvent event) {

@@ -1,6 +1,5 @@
 package me.streetmelodeez.greeter;
 
-import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -12,17 +11,17 @@ public final class Greeter extends JavaPlugin implements Listener {
     public void onEnable() {
         configYenile();
         // Plugin startup logic
-        getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "[Greeter is enabled]");
-        getServer().getPluginManager().registerEvents(new PlayerListeners(this), this);
-        getCommand("greeter").setExecutor(new Commands(this));
-        getCommand("greeter").setTabCompleter(new TabComplete(this));
+        getServer().getConsoleSender().sendMessage(tag + "§ais enabled");
+        new PlayerListeners(this);
+        new Commands(this);
+        new TabComplete(this);
 
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
-        getServer().getConsoleSender().sendMessage(ChatColor.RED + "[Greeter is disabled]");
+        getServer().getConsoleSender().sendMessage(tag + "§4is disabled");
     }
 
     public void configYenile(){
