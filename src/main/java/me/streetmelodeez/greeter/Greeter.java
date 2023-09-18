@@ -12,9 +12,9 @@ public final class Greeter extends JavaPlugin implements Listener {
         configYenile();
         // Plugin startup logic
         getServer().getConsoleSender().sendMessage(tag + "§ais enabled");
-        new PlayerListeners(this);
-        new Commands(this);
-        new TabComplete(this);
+        getServer().getPluginManager().registerEvents(new PlayerListeners(this), this);
+        getCommand("greeter").setExecutor(new Commands(this));
+        getCommand("greeter").setTabCompleter(new TabComplete(this));
 
     }
 

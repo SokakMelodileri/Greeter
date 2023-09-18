@@ -10,7 +10,7 @@ public class Commands implements CommandExecutor {
 
     public Commands(Greeter plugin){
         this.pl = plugin;
-        pl.getCommand("greeter").setExecutor(new Commands(plugin));
+
     }
 
     @Override

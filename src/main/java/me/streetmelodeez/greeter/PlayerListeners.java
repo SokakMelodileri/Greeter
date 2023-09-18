@@ -13,7 +13,7 @@ public class PlayerListeners implements Listener {
 
     public PlayerListeners (Greeter plugin){
         this.plugin = plugin;
-        plugin.getServer().getPluginManager().registerEvents(new PlayerListeners(plugin), plugin);}
+        }
 
     @EventHandler
     public void wm (PlayerJoinEvent event) {

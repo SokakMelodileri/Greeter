@@ -12,7 +12,6 @@ public class TabComplete implements TabCompleter {
     Greeter pl;
     public TabComplete(Greeter plugin){
         this.pl = plugin;
-        pl.getCommand("greeter").setTabCompleter(new TabComplete(pl));
     }
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
